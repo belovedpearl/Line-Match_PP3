@@ -16,6 +16,22 @@ COLS = 5
 
 
 name = ""   # Global variable declared to be changed with each user
+def assign_point():
+    """
+      Allow user to choose how many points will be used in playing
+      validates that a number was inputed
+    """
+    while True:
+        line_point = input("How many points will you like to start with (Amount is multiplied by the number of lines you choose\n)?")
+        if line_point.isdigit():
+            line_point = int(line_point)
+            if MIN_BET <= line_point <= MAX_BET:
+                break
+            else:
+                print(f"Total worth must be between {MIN_BET} and {MAX_BET}")
+        else:
+            print("Please enter a number")
+    return amount
 
 def get_number_of_lines():
     """
@@ -44,7 +60,16 @@ def generate_match():
     """
     lines = get_number_of_lines()
     print(lines)
-
+    while True:
+       point_assigned = assign_point()
+       total _point = point_assigned * lines
+       if total_point > points:
+           print(f"You do not have enough to points for that game, your current balance is  {points}")
+       else:
+           break
+    print(f"You are adding {point_assigned} for {lines} lines. Total guess is equal to  {total_point}")
+    
+    
 def choose_points():
     """
       Allows user to choose points in number
