@@ -16,11 +16,34 @@ COLS = 5
 
 
 name = ""   # Global variable declared to be changed with each user
+
+def get_number_of_lines():
+    """
+      Allows user to choose number of lines to guess
+      Checks if an actual number was chosen
+      Continues to ask until the right thing is entered
+    """
+    
+    while True:
+        guess_lines = input("Enter the number of lines to guess (1-" + str(MAX_LINES) + "): ")
+        if guess_lines.isdigit():
+            guess_lines = int(guess_lines)
+            if 1 <= guess_lines <= MAX_LINES:
+                break
+            else:
+                print("Enter a valid number of lines to continue")
+        else:
+            print("Please enter a number")
+    return guess_lines
+
+
+
 def generate_match():
     """
      Generate the 5 X 5 number combination
     """
     lines = get_number_of_lines()
+    print(lines)
 
 def choose_points():
     """
