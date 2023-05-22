@@ -12,10 +12,62 @@ MIN_POINTS = 1
 ROWS = 5
 COLS = 5
 
+symbol_count = {
+    "W": 2,
+    "X": 4,
+    "Y": 6,
+    "Z": 8
+}
 
+symbol_value = {
+    "W": 5,
+    "X": 4,
+    "Y": 3,
+    "Z": 2
+}
 
 
 name = ""   # Global variable declared to be changed with each user
+
+
+
+def print_match(columns):
+    """
+     Inverts the columns into a 5 by 5 matrix
+     Prints out the match
+    """
+    for row in range(len(columns[0])):
+        for i, column in enumerate(columns):
+            if i != len(columns)-1:
+                print(column[row], end=" | ")
+            else:
+                print(column[row], end="")
+        print()
+
+def get_match_set(rows, cols, rep):
+    """
+     Create a list from the set object
+    """
+    # Create an empty list to take in the loop
+    all_rep = []
+    for rep, rep_count in rep.items():
+        for i in range(rep_count):
+            all_rep.append(rep)
+    
+    columns = []
+    for col in range(cols):
+        column = []
+        current_rep = all_rep[:]  # Creates a similar list in all_rep
+        for row in range(rows):
+            value = random.choice(current_rep)
+            current_rep.remove(value) # Values removed to avoid repetition
+            column.append(value)
+            
+        columns.append(column)
+        
+    return columns
+
+
 def assign_point():
     """
       Allow user to choose how many points will be used in playing
@@ -54,7 +106,7 @@ def get_number_of_lines():
 
 
 
-def generate_match():
+def generate_match(point):
     """
      Generate the 5 X 5 number combination
     """
@@ -62,14 +114,19 @@ def generate_match():
     print(lines)
     while True:
        point_assigned = assign_point()
-       total _point = point_assigned * lines
+       total_point = point_assigned * lines
        if total_point > points:
            print(f"You do not have enough to points for that game, your current balance is  {points}")
        else:
            break
     print(f"You are adding {point_assigned} for {lines} lines. Total guess is equal to  {total_point}")
-    
-    
+    match_set = get_match_set(ROWS, COLS, symbol_count)
+    print_match(match_set)
+    winnings, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
+    print(f"You won {winnings}.")
+    print(f"You won on lines", *winning_lines)
+    return winnings - total_point
+
 def choose_points():
     """
       Allows user to choose points in number
@@ -100,7 +157,7 @@ def open_game():
     
     while True:
         print(f"Current balance is {points} points.")
-        generate_match()
+        generate_match(points)
    
 
 
