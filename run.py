@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import pyfiglet
+import random
 
 
 # Constant variables to be used for the game
@@ -29,6 +30,19 @@ symbol_value = {
 
 name = ""   # Global variable declared to be changed with each user
 
+def check_winnings(columns, lines, guess, values):
+    winning_lines = []
+    win = 0
+    for line in range(lines):
+        symbol = columns[0][line]
+        for column in columns:
+            symbol_check  = column[line]
+            if symbol != symbol_check:
+                break
+        else:
+            win += values[symbol] * guess 
+            winning_lines.append(line + 1)
+    return win, winning_lines
 
 
 def print_match(columns):
@@ -77,13 +91,13 @@ def assign_point():
         line_point = input("How many points will you like to start with (Amount is multiplied by the number of lines you choose\n)?")
         if line_point.isdigit():
             line_point = int(line_point)
-            if MIN_BET <= line_point <= MAX_BET:
+            if MIN_POINTS <= line_point <= MAX_POINTS:
                 break
             else:
-                print(f"Total worth must be between {MIN_BET} and {MAX_BET}")
+                print(f"Total worth must be between {MIN_POINTS} and {MAX_POINTS}")
         else:
             print("Please enter a number")
-    return amount
+    return line_point
 
 def get_number_of_lines():
     """
@@ -115,17 +129,18 @@ def generate_match(point):
     while True:
        point_assigned = assign_point()
        total_point = point_assigned * lines
-       if total_point > points:
-           print(f"You do not have enough to points for that game, your current balance is  {points}")
+       if total_point > point:
+           print(f"You do not have enough to points for that game, your current balance is  {point}")
+           
        else:
            break
     print(f"You are adding {point_assigned} for {lines} lines. Total guess is equal to  {total_point}")
     match_set = get_match_set(ROWS, COLS, symbol_count)
     print_match(match_set)
-    winnings, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
-    print(f"You won {winnings}.")
+    win, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
+    print(f"You won {win}.")
     print(f"You won on lines", *winning_lines)
-    return winnings - total_point
+    return win - total_point
 
 def choose_points():
     """
@@ -157,8 +172,14 @@ def open_game():
     
     while True:
         print(f"Current balance is {points} points.")
-        generate_match(points)
-   
+        answer = input("Press enter to play (q to quit)")
+        if answer == "q":
+            break
+        points += generate_match(points)
+    print(f"You left with {points}")
+        
+        
+
 
 
 def instruct():
