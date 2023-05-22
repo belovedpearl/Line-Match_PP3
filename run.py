@@ -3,7 +3,24 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import pyfiglet
 
+
+# Constant variables to be used for the game
+MAX_LINES = 5
+MAX_POINTS = 100
+MIN_POINTS = 1
+
+ROWS = 5
+COLS = 5
+
+
+
+
 name = ""   # Global variable declared to be changed with each user
+def generate_match():
+    """
+     Generate the 5 X 5 number combination
+    """
+    lines = get_number_of_lines()
 
 def choose_points():
     """
