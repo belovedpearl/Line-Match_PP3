@@ -13,7 +13,7 @@
 ---
 ---
  * [Project Description](#project-description)
-    * [Site Owners Goal](#site-owners-goal)
+    * [How To Play](#how-to-play)
     * [Users Goal](#users-goal)
     * [Target Audience](#target-audience)
    
@@ -91,21 +91,21 @@
 
 ---
 
-## Site Owners Goal
+## HOW TO PLAY
 
 ---
 
-   * To show forth different historic centers around the world thereby improving users geographical reach.
-   * Targets old and young people interested in getting more knowledge about the world around them.
-   * To instil knowledge in its users of not so popular historic centers.
-   * Take in the player's name to make the experience more personal.
-   * Allow users to access the instructions first.
-   * Progress bar to keep its user informed about how well they are performing on the test.
-   * Points update. 
-   * Number of loss record.
-   * Overall score obtained by the user.
-   * Save the first highscore in the highscore page.
-   * No "Reset" button to allow true test shown at the end of the test.
+   * The user is allowed to decide on his starting points.
+   * Computer randomly creates a 5 by 5 grid of alphebet containing the letters (WXYZ).
+   * The user is to guess what row is likely to contain the same alphabet.
+   * Choose 1 to guess only the first line will be the same.
+   * Choose 2 to guess the first two lines will be the same.
+   * Choose 3 to guess the first three lines will be the same.
+   * Choose 4 to guess the first four lines will be the same.
+   * Choose 5 to guess all five lines will be the same.
+   * From the starting point, the user is prompted to commit some points to each line of guess.
+   * Continue to play till you run out of point or have less point to continue your game.
+   
 
 
 ---
