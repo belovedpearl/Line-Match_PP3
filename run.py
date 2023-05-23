@@ -142,6 +142,7 @@ def generate_match(point):
     print(f"You won on lines", *winning_lines)
     return win - total_point
 
+
 def choose_points():
     """
       Allows user to choose points in number
@@ -151,16 +152,17 @@ def choose_points():
     print("Choose your starting point.")
 
     while True:
-        points = input("How many points will you like to start with?\n")
+        points = input("How many points will you like to start with? ")
         if points.isdigit():
             points = int(points)
-            if points > 0:
+            if points > 0 and points <= MAX_POINTS:
                 break
             else:
-                print("Points must be greater than zero")
+                print(f"To play this game, your points must be greater than 0 and less than OR equal to {MAX_POINTS}")
         else:
             print("Please enter a number")
     return points
+
 
 def open_game():
     """
@@ -172,7 +174,7 @@ def open_game():
     
     while True:
         print(f"Current balance is {points} points.")
-        answer = input("Press enter to play (q to quit)")
+        answer = input("Press enter to play or q to quit")
         if answer == "q":
             break
         points += generate_match(points)
@@ -180,29 +182,40 @@ def open_game():
         
         
 
-
-
 def instruct():
     print("To start the game, pick your desired starting points.\n")
-    print("Computer randomly creates a 5 x 5 grid of alphabets, you are to guess what row is/are likely to contain the same set of alphabet\n")
-    print("To guess, choose between 1-5.\n")
+    print("Computer randomly creates a 5 x 5 grid of alphabets.\n")
+    print("You are to guess what row is or are likely to contain the same set of alphabet\n")
+    print()
+    print("To guess, choose between 1-5:\n")
+    print("Choose 1 to guess the first line.\n")
+    print("Choose 2 to guess the first two lines.\n")
+    print("Choose 3 to guess the first  three lines.\n")
+    print("Choose 4 to guess the first four lines.\n")
+    print("Choose 5 to guess all five lines.\n")
+    print()
     print("Commit some points to each lines.\n")
+    print()
     print("Press enter to play the game till you have no more or less points to continue.\n")
+    print()
     print("Your game starts here...\n")
     open_game()
 
+
 def new_game(name):
     """
-       Opens up the instruction and the game section
+       Opens up the instruction and links to the game section
     """
     print(f"Welcome {name}, choose from the option below...\n")
-    decision = input("Press i to view instruction. \nPress n to play new game\n")
+    print()
+    decision = input("Press i to view instruction.\nPress n to play new game\n")
     if decision == "i":
         instruct()
     elif decision == "n":
         open_game()
     else:
         print("You have not chosen a valid option.\n")
+
 
 def welcome_text():
     """
@@ -218,19 +231,21 @@ def main():
     welcome_text()
     print()
     print()
-    print("Welcome to the game...")
+    print("Welcome to the game...\n")
     global name
     name = input("Enter your name: ")
     while True:
-        new_game_decision = input('Press y to start the game\n or \n Press n to quit:\n')
-        if new_game_decision == 'y':
+        new_game_decision = input("Press y to start the game\n or \nPress n to quit:\n")
+        if new_game_decision == "y":
             new_game(name)
             break
-        elif new_game_decision == 'n':
+        elif new_game_decision == "n":
             main()
             break
         else:
-            print('Please enter either y or n')
+            print("Please enter either y or n")
+
 
 main()
-print(name)
+
+
