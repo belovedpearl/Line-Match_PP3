@@ -96,9 +96,9 @@ def assign_point():
             if  line_point >= MIN_POINTS and line_point <= MAX_POINTS:
                 break
             else:
-                print(f"Total worth of points must be between {MIN_POINTS} and {MAX_POINTS}")
+                typewriter(f"Total worth of points must be between {MIN_POINTS} and {MAX_POINTS}")
         else:
-            print("Please enter a number")
+            typewriter("Please enter a number")
     return line_point
 
 
@@ -142,10 +142,10 @@ def generate_match(point):
     print_match(match_set)
     win, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
     if win >= 1:
-        typewriter(f"You guess {win} lines right.")
+        typewriter(f"You guess {win} lines right.\n")
         typewriter(f"You had the right guess for lines," *winning_lines)
     else:
-        typewriter("Your guess was wrong.")
+        typewriter("Your guess was wrong.\n")
     return win - total_point
 
 
@@ -180,10 +180,12 @@ def open_game():
     
     while True:
         typewriter(f"Current balance is {points} points.\n")
-        answer = input("Press enter to play or q to quit.\n")
+        answer = input("Press p to play or q to quit.\n")
         if answer == "q":
             break
-        points += generate_match(points)
+        elif answer == "p":
+            points += generate_match(points)
+    clear_screen()
     typewriter(f"You left with {points}\n")
         
         
