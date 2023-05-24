@@ -3,6 +3,8 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import pyfiglet
 import random
+from set import *
+
 
 
 # Constant variables to be used for the game
@@ -60,7 +62,7 @@ def print_match(columns):
 
 def get_match_set(rows, cols, rep):
     """
-     Create a list from the set object
+     Create a list from the object listed as constant
     """
     # Create an empty list to take in the loop
     all_rep = []
@@ -88,16 +90,17 @@ def assign_point():
       validates that a number was inputed
     """
     while True:
-        line_point = input("How many points will you like to start with (Amount is multiplied by the number of lines you choose\n)?")
+        line_point = input("How many points will you like to start with (Your point is multiplied by the number of lines choosen)?\n")
         if line_point.isdigit():
             line_point = int(line_point)
-            if MIN_POINTS <= line_point <= MAX_POINTS:
+            if  line_point >= MIN_POINTS and line_point <= MAX_POINTS:
                 break
             else:
-                print(f"Total worth must be between {MIN_POINTS} and {MAX_POINTS}")
+                print(f"Total worth of points must be between {MIN_POINTS} and {MAX_POINTS}")
         else:
             print("Please enter a number")
     return line_point
+
 
 def get_number_of_lines():
     """
@@ -110,10 +113,10 @@ def get_number_of_lines():
         guess_lines = input("Enter the number of lines to guess (1-" + str(MAX_LINES) + "): ")
         if guess_lines.isdigit():
             guess_lines = int(guess_lines)
-            if 1 <= guess_lines <= MAX_LINES:
+            if guess_lines >= 1 and guess_lines <= MAX_LINES:
                 break
             else:
-                print("Enter a valid number of lines to continue")
+                print("Enter a valid number between 1-5 to continue")
         else:
             print("Please enter a number")
     return guess_lines
@@ -125,7 +128,7 @@ def generate_match(point):
      Generate the 5 X 5 number combination
     """
     lines = get_number_of_lines()
-    print(lines)
+    
     while True:
        point_assigned = assign_point()
        total_point = point_assigned * lines
@@ -138,8 +141,11 @@ def generate_match(point):
     match_set = get_match_set(ROWS, COLS, symbol_count)
     print_match(match_set)
     win, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
-    print(f"You won {win}.")
-    print(f"You won on lines", *winning_lines)
+    if win >= 1:
+        print(f"You guess {win} lines right.")
+        print(f"You had the right guess for lines," *winning_lines)
+    else:
+        print("Your guess was wrong.")
     return win - total_point
 
 
@@ -174,7 +180,7 @@ def open_game():
     
     while True:
         print(f"Current balance is {points} points.")
-        answer = input("Press enter to play or q to quit")
+        answer = input("Press enter to play or q to quit.\n")
         if answer == "q":
             break
         points += generate_match(points)
@@ -183,22 +189,22 @@ def open_game():
         
 
 def instruct():
-    print("To start the game, pick your desired starting points.\n")
-    print("Computer randomly creates a 5 x 5 grid of alphabets.\n")
-    print("You are to guess what row is or are likely to contain the same set of alphabet\n")
+    typewriter("To start the game, pick your desired starting points.\n")
+    typewriter("Computer randomly creates a 5 x 5 grid of alphabets.\n")
+    typewriter("You are to guess what row is or are likely to contain the same set of alphabet\n")
     print()
-    print("To guess, choose between 1-5:\n")
-    print("Choose 1 to guess the first line.\n")
-    print("Choose 2 to guess the first two lines.\n")
-    print("Choose 3 to guess the first  three lines.\n")
-    print("Choose 4 to guess the first four lines.\n")
-    print("Choose 5 to guess all five lines.\n")
+    typewriter("To guess, choose between 1-5:\n")
+    typewriter("Choose 1 to guess the first line.\n")
+    typewriter("Choose 2 to guess the first two lines.\n")
+    typewriter("Choose 3 to guess the first  three lines.\n")
+    typewriter("Choose 4 to guess the first four lines.\n")
+    typewriter("Choose 5 to guess all five lines.\n")
     print()
-    print("Commit some points to each lines.\n")
+    typewriter("Commit some points to each lines.\n")
     print()
-    print("Press enter to play the game till you have no more or less points to continue.\n")
+    typewriter("Press enter to play the game till you have no more or less points to continue.\n")
     print()
-    print("Your game starts here...\n")
+    typewriter("Your game starts here...\n")
     open_game()
 
 
@@ -206,7 +212,7 @@ def new_game(name):
     """
        Opens up the instruction and links to the game section
     """
-    print(f"Welcome {name}, choose from the option below...\n")
+    typewriter(f"Welcome {name}, choose from the option below...\n")
     print()
     decision = input("Press i to view instruction.\nPress n to play new game\n")
     if decision == "i":
@@ -231,7 +237,7 @@ def main():
     welcome_text()
     print()
     print()
-    print("Welcome to the game...\n")
+    typewriter("Welcome to the game...\n")
     global name
     name = input("Enter your name: ")
     while True:
