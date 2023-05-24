@@ -344,30 +344,24 @@ Buttons are used for easy navigation across different section of the application
 
 ### Languages
 
-* HTML
+* PYTHON
 
-* CSS
-
-* JAVASCRIPT
 
 ---
 
 ### Frameworks and Programs
 
 
-* Balsamiq
-    * Used to create wireframes to plan the project
+* Lucid charts
+    * Used to plan the project
 
 
 * Github
     * To store written code
 
 
-* Gitpod
-    * The project was started using Gitpod development environment. From here, I could commit and push all of my changes to Github before switching to the new IDE.
-
 * Code Anywhere
-    * This is the new IDE inroduced by the institute, as intructed I switched to this new IDE.
+    * The developement environment used to  write the code where I could commit and push my changes to Github.
 
 ---
 
@@ -513,27 +507,22 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 ## Credits
 
 
-* [ReadMe table presentation](https://github.com/AdamBoley/The-Space-Marine-Legions)
+* [Importing your own module properly](https://youtu.be/GxCXiSk6no)
 
 * [ReadMe Table Inspiration](https://github.com/belovedpearl/Green_Space-PP1/blob/main/README.md)
 
 * [Code institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
-* [CSS Transition](https:youtu.be/EVze4Cq-dZ8)
+* [Typewriter effect](https://youtu.be/2h8e0tXHfk0)
 
-* [Progress Bar Tutorial](https://youtu.be/kjhsS4INZ9o)
+* [Clear screen function](https://www.101computing.net/python-typing-text-effect/)
 
 * [Learinng more about flex](https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/).
 
 *  [W3Schools](https://www.w3schools.com/), [Stack overflow](https://www.slackoverflow.com/) & [Mdn wed docs](https://developer.mozilla.org/en-US/) - Visited several times to learn different syntax used in the code.
 
 
-* Images: 
-Images used are from [Pexels](https://pexels.com)
 
-* Content Sources:
-
-[25 Best Historical Places in the World](https://luxurycolumnist.com/best-historical-places-in-the-world/)
 
 ---
 
@@ -545,6 +534,6 @@ Images used are from [Pexels](https://pexels.com)
 
 * A big thank you to my Mentor, **Sandeep Aggarwal**  for the support and through enlightment he provided during the buildup of this project.
 
-* ReadMe layout inspiration from other Code Institute students from #peer-code-review forum and https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md#development
+* ReadMe layout inspiration from the pp3 project review section of the course
 
 * Thank you to everyone at **Code Institute** for helping us learn.
