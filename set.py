@@ -14,3 +14,6 @@ def typewriter(message):
         else:
             time.sleep(1)
 
+def clear_screen():
+    os.system("clear")
+    

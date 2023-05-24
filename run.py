@@ -116,9 +116,9 @@ def get_number_of_lines():
             if guess_lines >= 1 and guess_lines <= MAX_LINES:
                 break
             else:
-                print("Enter a valid number between 1-5 to continue")
+                typewriter("Enter a valid number between 1-5 to continue")
         else:
-            print("Please enter a number")
+            typewriter("Please enter a number")
     return guess_lines
 
 
@@ -142,10 +142,10 @@ def generate_match(point):
     print_match(match_set)
     win, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
     if win >= 1:
-        print(f"You guess {win} lines right.")
-        print(f"You had the right guess for lines," *winning_lines)
+        typewriter(f"You guess {win} lines right.")
+        typewriter(f"You had the right guess for lines," *winning_lines)
     else:
-        print("Your guess was wrong.")
+        typewriter("Your guess was wrong.")
     return win - total_point
 
 
@@ -155,7 +155,7 @@ def choose_points():
       Checks if an actual number was chosen
       Continues to ask until the right thing is entered
     """
-    print("Choose your starting point.")
+    typewriter("Choose your starting point.\n")
 
     while True:
         points = input("How many points will you like to start with? ")
@@ -164,9 +164,9 @@ def choose_points():
             if points > 0 and points <= MAX_POINTS:
                 break
             else:
-                print(f"To play this game, your points must be greater than 0 and less than OR equal to {MAX_POINTS}")
+                typewriter(f"To play this game, your points must be greater than 0 and less than OR equal to {MAX_POINTS}")
         else:
-            print("Please enter a number")
+            typewriter("Please enter a number")
     return points
 
 
@@ -176,15 +176,15 @@ def open_game():
     """
     points = choose_points()
     print()
-    print(f"You have chosen a starting point of {points}")
+    typewriter(f"You have chosen a starting point of {points}\n")
     
     while True:
-        print(f"Current balance is {points} points.")
+        typewriter(f"Current balance is {points} points.\n")
         answer = input("Press enter to play or q to quit.\n")
         if answer == "q":
             break
         points += generate_match(points)
-    print(f"You left with {points}")
+    typewriter(f"You left with {points}\n")
         
         
 
@@ -204,6 +204,7 @@ def instruct():
     print()
     typewriter("Press enter to play the game till you have no more or less points to continue.\n")
     print()
+    clear_screen()
     typewriter("Your game starts here...\n")
     open_game()
 
