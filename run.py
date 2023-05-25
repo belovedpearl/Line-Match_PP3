@@ -249,6 +249,7 @@ def main():
     name = input("Enter your name: ")
     while True:
         new_game_decision = input("Press y to start the game\n or \nPress n to quit:\n")
+
         if new_game_decision == "y":
             new_game(name)
             break
@@ -257,6 +258,7 @@ def main():
             break
         else:
             print("Please enter either y or n")
+
 
 
 main()

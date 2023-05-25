@@ -1,0 +1,51 @@
+
+                                                                     
+[[green]]                                                                    
+LLLLLLLLLLL               iiii                                       
+L:::::::::L              i::::i                                      
+L:::::::::L               iiii                                       
+LL:::::::LL                                                          
+  L:::::L               iiiiiiinnnn  nnnnnnnn        eeeeeeeeeeee    
+  L:::::L               i:::::in:::nn::::::::nn    ee::::::::::::ee  
+  L:::::L                i::::in::::::::::::::nn  e::::::eeeee:::::ee
+  L:::::L                i::::inn:::::::::::::::ne::::::e     e:::::e
+  L:::::L                i::::i  n:::::nnnn:::::ne:::::::eeeee::::::e
+  L:::::L                i::::i  n::::n    n::::ne:::::::::::::::::e 
+  L:::::L                i::::i  n::::n    n::::ne::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i  n::::n    n::::ne:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::i n::::n    n::::ne::::::::e          
+L::::::::::::::::::::::Li::::::i n::::n    n::::n e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::i n::::n    n::::n  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiii nnnnnn    nnnnnn    eeeeeeeeeeeeee  
+
+                                                                                                              
+   [[blue]]                                                                                                             
+  MMMMMMMM               MMMMMMMM                          tttt                             hhhhhhh             
+  M:::::::M             M:::::::M                       ttt:::t                             h:::::h             
+  M::::::::M           M::::::::M                       t:::::t                             h:::::h             
+  M:::::::::M         M:::::::::M                       t:::::t                             h:::::h             
+  M::::::::::M       M::::::::::M  aaaaaaaaaaaaa  ttttttt:::::ttttttt        cccccccccccccccch::::h hhhhh       
+  M:::::::::::M     M:::::::::::M  a::::::::::::a t:::::::::::::::::t      cc:::::::::::::::ch::::hh:::::hhh    
+  M:::::::M::::M   M::::M:::::::M  aaaaaaaaa:::::at:::::::::::::::::t     c:::::::::::::::::ch::::::::::::::hh  
+  M::::::M M::::M M::::M M::::::M           a::::atttttt:::::::tttttt    c:::::::cccccc:::::ch:::::::hhh::::::h 
+  M::::::M  M::::M::::M  M::::::M    aaaaaaa:::::a      t:::::t          c::::::c     ccccccch::::::h   h::::::h
+  M::::::M   M:::::::M   M::::::M  aa::::::::::::a      t:::::t          c:::::c             h:::::h     h:::::h
+  M::::::M    M:::::M    M::::::M a::::aaaa::::::a      t:::::t          c:::::c             h:::::h     h:::::h
+  M::::::M     MMMMM     M::::::Ma::::a    a:::::a      t:::::t    ttttttc::::::c     ccccccch:::::h     h:::::h
+  M::::::M               M::::::Ma::::a    a:::::a      t::::::tttt:::::tc:::::::cccccc:::::ch:::::h     h:::::h
+  M::::::M               M::::::Ma:::::aaaa::::::a      tt::::::::::::::t c:::::::::::::::::ch:::::h     h:::::h
+  M::::::M               M::::::M a::::::::::aa:::a       tt:::::::::::tt  cc:::::::::::::::ch:::::h     h:::::h
+  MMMMMMMM               MMMMMMMM  aaaaaaaaaa  aaaa         ttttttttttt      cccccccccccccccchhhhhhh     hhhhhhh
+                                                                                                                
+ [[cyan-background]]============================================================================[[black-background]]                                                                                                               
+                                    Try your luck!!!                                                                                                                                                                                                             
+ [[cyan-background]]===============================================================================[[black-background]]                                                              
+                                                                                                                
+                                                                                                                
+                                 
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
