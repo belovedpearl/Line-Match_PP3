@@ -14,8 +14,6 @@
 ---
  * [Project Description](#project-description)
     * [How To Play](#how-to-play)
-    * [Users Goal](#users-goal)
-    * [Target Audience](#target-audience)
    
 * [WireFrames](#wireframes)
     * [Initial Wireframes](#initial-wireframes)
@@ -27,8 +25,8 @@
        * [Wireframe 4](#wireframe-4-desktop-and-laptop)
        * [Wireframe 5](#wireframe-5-mobile)
 * [Features](#features)
-    * [Landing Page](#landing-page)
-    * [Instruction Page](#instruction-page)
+    * [Existing Features](#existing-feature)
+    * [Instruction](#instruction-page)
     * [High Score Page](#high-score-page)
     * [Player Name Entry Page](#player-name-entry-page)
     * [Welcome Page](#welcome-page)
@@ -37,9 +35,6 @@
     
 
 * [Future features](#future-features)
-* [Design Choices](#design-choices)
-   * [Font](#font)
-   * [Color Schemes](#colour-scheme)
 
 * [Accessibility](#accessibility)
 
@@ -58,7 +53,6 @@
          * [HTML](#html)
          * [CSS](#css)
          * [JAVASCRIPT](#javascript)
-     * [Lighthouse Performance](#lighthouse-performance)
      * [Functional Testing](#functional-testing)
 * [Credit](#credits)
 * [Acknowledgement](#acknowledgement)
@@ -110,22 +104,6 @@
 
 ---
 
-## Users Goal
-
----
-
-   * To easily navigate and understand the game.
-   * Be informed about historic centers around.
-   * To be able to access the game from different media.
-
-
----
-
-## Target Audience
-
----
-
-The game seeks to impact knowledge and hence its target audience are old and young interested in knowing about the various historic centers around the world. 
 
 
 ---
@@ -184,25 +162,19 @@ Presention of information on the site will be in the following ways;
 
 ---
 
-### Landing Page
+### Existing Features
 
-The main page is displayed once the websites is open
+The welcome screen features the name of the game made with ASCII art generator
 
-It is made up of the heading "Historic center quiz" telling the user what the page is about. Right under it are two buttons described below.
+ ***Instruction Section*** : This can be accessed by following the prompt that leads to "i". For ease, instruction section leads directly to the main game
 
- ***Instruction Button*** : This opens up the instruction panel which tells the player more on what to expect in the game.It has a button to return to the main page in order to start the game.
 
-Rules for The Quiz
-*  This page opens up once the user clicks on the instruction button.
-*  It consist of information about the game every user must know.
-*  After reading through the instruction, the user is to press the button "Home" which takes the user back to the main page to continue to the game.
-
-***Play Game Button***: This prompts the users to enter his name which is used in referencing the player at the end of the game. 
-
-***High Score Button***: This button allow users to view previously saved high scores. It keeps a record of 5 high scores that have been recorded. 
+***Play Game Section***: This is accessed either by following the prompt that leads to " press p to play game" or from the instruction section. It was planned this way to give ease of access to returning users that will no longer need to access the game instruction to play the game.  
 
 
 ![Home Page](assets/images/siteRepresentation/homepage.webp)
+
+***Computer Match display***: This displays to the user the match made by the computer.
 
 ---
 
@@ -390,27 +362,27 @@ Buttons are used for easy navigation across different section of the application
 
 ### GitHub Pages
 
-* The project was deployed via Github Pages.
+* The project was deployed using heroku.
 
-The following illustrate the steps I took to deplay my website;
-
-  * Go to the repository for [historic center quiz](https://github.com/belovedpearl/Historic_Center_Quiz_PP2).
-  * Click on the "Settings" tab, locate the **"Pages"** tab and click it.
-  * In the **"Build and Deployment"** section there is a **"Branch Heading"**. Select to deploy from **"main"** branch in the dropdown option.
-  * Click on **save**
-  * A few minutes later, after refreshing the page, there will automatically be an update containing the **"live site link"**.
-
-The live link can be found [here](https://belovedpearl.github.io/Historic_Center_Quiz_PP2/).
-
+The following illustrate the steps I took to deploy my website;
+Fork or clone this repository in the following steps:
 ### How to Fork
-  
-  By forking a repository, you make a copy of a repository without affecting the original repository. You can fork this repository using the following steps.
 
-  * Login to GitHub and locate the [GitHub Repository](https://github.com/belovedpearl/Historic_Center_Quiz_PP2).
+  * Login to GitHub and locate the [GitHub Repository](https://github.com/belovedpearl/Line-Match_PP3).
 
   * At the top of the repository just above the **"Settings"** button on the menu, locate the **"Fork"** button.
 
   * Once **clicked**, you should have a copy of the original repository in your own account.
+
+### To deploy
+
+  * Create a new Heroku app.
+  * Set the build packs to Python and NodeJs in exact order.
+  * Link the Heroku app to the repository.
+  * Click on **Deploy**
+  * A few minutes later, after refreshing the page, there will automatically be an update containing the **"live site link"**.
+
+The live link can be found [here](https://belovedpearl.github.io/Historic_Center_Quiz_PP2/).
 
 
 ---
