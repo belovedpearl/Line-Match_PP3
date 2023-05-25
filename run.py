@@ -55,9 +55,9 @@ def print_match(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
             if i != len(columns)-1:
-                print(column[row], end=" | ")
+                print(column[row].center(10), end=" | ")
             else:
-                print(column[row], end="")
+                print(column[row].center(10), end="")
         print()
 
 def get_match_set(rows, cols, rep):
@@ -189,7 +189,7 @@ def open_game():
         elif answer == "p":
             points += generate_match(points)
     clear_screen()
-    typewriter(f"You left with {points}\n")
+    typewriter(f"You left the game, {points} points left!\n")
         
         
 
@@ -211,6 +211,7 @@ def instruct():
     print()
     clear_screen()
     typewriter("Your game starts here...\n")
+    clear_screen()
     open_game()
 
 
