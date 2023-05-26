@@ -3,7 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import pyfiglet
 import random
-from set import *
+from helper_file import *
 
 
 
@@ -31,6 +31,7 @@ symbol_value = {
 
 
 name = ""   # Global variable declared to be changed with each user
+
 
 def check_winnings(columns, lines, guess, values):
     winning_lines = []
@@ -192,7 +193,6 @@ def open_game():
     typewriter(f"You left the game, {points} points left!\n")
         
         
-
 def instruct():
     typewriter("To start the game, pick your desired starting points.\n")
     typewriter("Computer randomly creates a 5 x 5 grid of alphabets.\n")
@@ -260,7 +260,7 @@ def main():
             print("Please enter either y or n")
 
 
-
-main()
+if __name__ == "__main__":
+    main()
 
 
