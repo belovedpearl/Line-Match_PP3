@@ -6,14 +6,25 @@ import random
 from helper_file import *
 
 
-
 # Constant variables to be used for the game
 MAX_LINES = 5
+MIN_LINES = 1
 MAX_POINTS = 100
 MIN_POINTS = 1
 
 ROWS = 5
 COLS = 5
+
+point_input = "How many points will you like to start with?\n"
+line_input = "How many lines will you like to guess?\n"
+line_points = "How many points will you like to start with (Your point is multiplied by the number of lines choosen)?\n"
+
+START_GAME_MESSAGE = """
+Press y to start the game
+   or
+Press n to quit: 
+"""
+
 
 symbol_count = {
     "W": 2,
@@ -90,36 +101,16 @@ def assign_point():
       Allow user to choose how many points will be used in playing
       validates that a number was inputed
     """
-    while True:
-        line_point = input("How many points will you like to start with (Your point is multiplied by the number of lines choosen)?\n")
-        if line_point.isdigit():
-            line_point = int(line_point)
-            if  line_point >= MIN_POINTS and line_point <= MAX_POINTS:
-                break
-            else:
-                typewriter(f"Total worth of points must be between {MIN_POINTS} and {MAX_POINTS}")
-        else:
-            typewriter("Please enter a number")
+    line_point = input_a_digit(MIN_POINTS, MAX_POINTS, line_points )
     return line_point
 
 
 def get_number_of_lines():
     """
       Allows user to choose number of lines to guess
-      Checks if an actual number was chosen
-      Continues to ask until the right thing is entered
+      Calls on another function to verify the input
     """
-    
-    while True:
-        guess_lines = input("Enter the number of lines to guess (1-" + str(MAX_LINES) + "): ")
-        if guess_lines.isdigit():
-            guess_lines = int(guess_lines)
-            if guess_lines >= 1 and guess_lines <= MAX_LINES:
-                break
-            else:
-                typewriter("Enter a valid number between 1-5 to continue")
-        else:
-            typewriter("Please enter a number")
+    guess_lines = input_a_digit(MIN_LINES, MAX_LINES, line_input)
     return guess_lines
 
 
@@ -134,11 +125,10 @@ def generate_match(point):
        point_assigned = assign_point()
        total_point = point_assigned * lines
        if total_point > point:
-           print(f"You do not have enough to points for that game, your current balance is  {point}")
-           
+           print(f"You do not have enough to points for that game, your current balance is {point}")  
        else:
            break
-    print(f"You are adding {point_assigned} for {lines} lines. Total guess is equal to  {total_point}")
+    print(f"You are adding {point_assigned} for {lines} lines. Total guess is equal to {total_point}")
     match_set = get_match_set(ROWS, COLS, symbol_count)
     print_match(match_set)
     win, winning_lines = check_winnings(match_set, lines, point_assigned, symbol_value)
@@ -157,21 +147,24 @@ def choose_points():
       Continues to ask until the right thing is entered
     """
     typewriter("Choose your starting point.\n")
-
-    while True:
-        points = input("How many points will you like to start with? ")
-        if points.isdigit():
-            points = int(points)
-            if points > 0 and points <= MAX_POINTS:
-                break
-            else:
-                typewriter(f"To play this game, your points must be greater than 0 and less than OR equal to {MAX_POINTS}")
-        else:
-            typewriter("Please enter a number")
+    points = input_a_digit(MIN_POINTS, MAX_POINTS, point_input)
     return points
 
 
-def open_game():
+def input_a_digit(min_value, max_value, input_message):
+    while True:
+        user_input = input(input_message)
+        if user_input.isdigit():
+            user_input = int(user_input)
+            if user_input >= min_value and user_input <= max_value:
+                break
+            else:
+                typewriter(f"Enter a valid number between {min_value}-{max_value} to comtinue\n")
+        else:
+            typewriter("Please enter a number\n")
+    return user_input
+
+def start_game():
     """
     Opens up the game to the user
     """
@@ -193,39 +186,38 @@ def open_game():
     typewriter(f"You left the game, {points} points left!\n")
         
         
-def instruct():
+def print_instruction():
     typewriter("To start the game, pick your desired starting points.\n")
     typewriter("Computer randomly creates a 5 x 5 grid of alphabets.\n")
-    typewriter("You are to guess what row is or are likely to contain the same set of alphabet\n")
-    print()
+    typewriter("You are to guess what row is or are likely to contain the same set of alphabet\n\n")
+    
     typewriter("To guess, choose between 1-5:\n")
     typewriter("Choose 1 to guess the first line.\n")
     typewriter("Choose 2 to guess the first two lines.\n")
     typewriter("Choose 3 to guess the first  three lines.\n")
     typewriter("Choose 4 to guess the first four lines.\n")
-    typewriter("Choose 5 to guess all five lines.\n")
-    print()
-    typewriter("Commit some points to each lines.\n")
-    print()
-    typewriter("Press enter to play the game till you have no more or less points to continue.\n")
-    print()
+    typewriter("Choose 5 to guess all five lines.\n\n")
+    
+    typewriter("Commit some points to each lines.\n\n")
+   
+    typewriter("Press enter to play the game till you have no more or less points to continue.\n\n")
+   
     clear_screen()
     typewriter("Your game starts here...\n")
     clear_screen()
-    open_game()
+    start_game()
 
 
 def new_game(name):
     """
-       Opens up the instruction and links to the game section
+       Opens up the instruction and also links to the game section
     """
-    typewriter(f"Welcome {name}, choose from the option below...\n")
-    print()
-    decision = input("Press i to view instruction.\nPress n to play new game\n")
-    if decision == "i":
-        instruct()
-    elif decision == "n":
-        open_game()
+    typewriter(f"Welcome {name}, choose from the option below...\n\n")
+    decision = input("Press i to view instruction.\nPress p to play new game.\n")
+    if decision.lower() == "i":
+        print_instruction()
+    elif decision == "p":
+        start_game()
     else:
         print("You have not chosen a valid option.\n")
 
@@ -246,16 +238,15 @@ def main():
     print()
     typewriter("Welcome to the game...\n")
     global name
-    name = input("Enter your name: ")
+    name = input("Enter your name: \n")
     while True:
-        new_game_decision = input("Press y to start the game\n or \nPress n to quit:\n")
+        new_game_decision = input(START_GAME_MESSAGE)
 
-        if new_game_decision == "y":
+        if new_game_decision.lower() == "y":
             new_game(name)
             break
-        elif new_game_decision == "n":
-            main()
-            break
+        elif new_game_decision.lower() == "n":
+            continue
         else:
             print("Please enter either y or n")
 
