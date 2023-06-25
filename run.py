@@ -175,8 +175,8 @@ def start_game():
     while True:
         typewriter(f"Current balance is {points} points.\n")
         if points == 0:
-            typewriter(f"{name}, You are out of point, restart to play again!!!")
-            break
+            typewriter(f"{name}, You are out of point, restart to play again!!!\n")
+            exit()
         answer = input("Press p to play or q to quit.\n")
         if answer == "q":
             break
